@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <h1>Login</h1>
+    <form id="login-form">
+      <input type="text" id="user" placeholder="Usuário" required/>
+      <input type="password" id="pass" placeholder="Senha" required/>
+      <button type="submit">Entrar</button>
+    </form>
+    <script>
+      document.getElementById('login-form').addEventListener('submit', async e => {
+        e.preventDefault();
+        const user = document.getElementById('user').value;
+        const pass = document.getElementById('pass').value;
+        const res = await fetch('/login', {
+          method:'POST',
+          headers:{'Content-Type':'application/json'},
+          body:JSON.stringify({user,pass})
+        });
+        if(res.ok) alert('Logado com sucesso!');
+        else alert('Usuário ou senha inválidos.');
+      });
+    </script>
+  </body>
+</html>
