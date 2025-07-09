@@ -13,16 +13,16 @@
       <button type="submit">Entrar</button>
     </form>
     <script>
-      document.getElementById('login-form').addEventListener('submit', async e => {
+      document.getElementById('login-form').addEventListener('submit', async (e) => {
         e.preventDefault();
         const user = document.getElementById('user').value;
         const pass = document.getElementById('pass').value;
         const res = await fetch('/login', {
-          method:'POST',
-          headers:{'Content-Type':'application/json'},
-          body:JSON.stringify({user,pass})
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ user, pass })
         });
-        if(res.ok) alert('Logado com sucesso!');
+        if (res.ok) window.location.href = '/dashboard.html';
         else alert('Usuário ou senha inválidos.');
       });
     </script>
