@@ -20,6 +20,9 @@ npm start
 
 The server will run on port 3000 unless the `PORT` environment variable is set.
 
+The session middleware uses `SESSION_SECRET` to sign cookies. In development
+you can rely on the default `change-this-secret` or set your own value.
+
 ## Credentials
 
 The sample login uses the following credentials:
