@@ -5,7 +5,7 @@ const session = require('express-session');
 const app = express();
 app.use(express.json());
 app.use(session({
-  secret: 'uma-chave-secreta',
+  secret: process.env.SESSION_SECRET || 'change-this-secret',
   resave: false,
   saveUninitialized: false
 }));
