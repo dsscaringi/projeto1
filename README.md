@@ -28,3 +28,7 @@ The sample login uses the following credentials:
 - **Password:** `1234`
 
 No logout route is provided in this example.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
